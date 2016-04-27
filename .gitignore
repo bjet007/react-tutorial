@@ -1,0 +1,8 @@
+*.iml
+.idea/
+.DS_store
+node_modules/
+target/
+bower_components/
+npm-debug.log
+src/main/client/stylesheets/style.css

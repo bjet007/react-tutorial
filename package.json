@@ -1,0 +1,44 @@
+{
+  "name": "react-tutorial",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "bower": "^1.7.9",
+    "config": "^1.16.0",
+  },
+  "devDependencies": {
+    "jasmine-core": "^2.3.4",
+    "jasmine-reporters": "^2.0.7",
+    "jshint": "^2.8.0",
+    "karma": "^0.13.10",
+    "karma-coverage": "^0.5.2",
+    "karma-html-reporter": "^0.2.7",
+    "karma-jasmine": "^0.3.6",
+    "karma-junit-reporter": "^0.3.7",
+    "karma-phantomjs-launcher": "^0.2.1",
+    "live-reload": "^1.1.0",
+    "nodemon": "^1.7.1",
+    "opener": "^1.4.1",
+    "parallelshell": "^2.0.0",
+    "phantomjs": "^1.9.18"
+  },
+  "scripts": {
+    "dep:add": "bower --save install",
+    "dep:add-dev": "bower --save-dev install",
+    "dep:dev": "bower install --allow-root",
+    "dep:prod": "bower install -p --allow-root",
+    "install:dev": "npm install && npm run dep:dev",
+    "install:prod": "npm install --production && npm run dep:prod",
+    "js:client": "jshint --config project/jshint-client.conf src/main/client",
+    "js:server": "jshint --config project/jshint-server.conf src/main/server",
+    "js:client-test": "jshint --config project/jshint-client-test.conf src/test/client",
+    "js": "npm run js:client && npm run js:server && npm run js:client-test",
+    "test:single": "karma start project/karma-conf.js --single-run",
+    "test:watch": "karma start project/karma-conf.js",
+    "test": "npm run test:single",
+    "live-reload": "live-reload --port 3001 src/main",
+    "open-browser": "opener http://localhost:3000",
+    "start:dev": "parallelshell \"npm run live-reload\" \"npm run open-browser\" \"nodemon --watch src/main ./bin/www\"",
+    "start": "node ./bin/www"
+  }
+}
