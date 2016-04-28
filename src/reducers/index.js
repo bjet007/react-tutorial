@@ -7,6 +7,12 @@
  *          you edit them, they are not updated again.
  */
 import { combineReducers } from 'redux';
+import schools from './schools';
 /* Populated by react-webpack-redux:reducer */
-const reducers = {};
+const reducers = {
+  schools
+};
 module.exports = combineReducers(reducers);
+
+
+

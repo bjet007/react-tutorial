@@ -1,27 +1,35 @@
-var React = require("react");
-var actions = require("../actions/SchoolActions");
 
+import React, {
+  Component,
+  PropTypes
+} from 'react';
 
-module.exports = React.createClass({
-    getInitialState:function(){
-      return {
-          name:"",
-          tagline:""
+class AddSchool extends React.Component {
+    constructor(props, context) {
+      super(props, context)
+      this.state = {
+        name:"",
+        tagline:""
       }
-    },
-    addSchool:function(e){
+    }
+
+    addSchool(e){
         e.preventDefault();
-        actions.addSchool(this.state);
-    },
-    handleInputChange:function(e){
+        this.props.addSchool(this.state);
+    }
+
+    handleInputChange(e){
       e.preventDefault();
       var name = e.target.name;
       var state = this.state;
       state[name] = e.target.value;
       this.setState(state);
-    },
-    render:function(){
+    }
+
+    render(){
+
         return(
+
             <form className="form" onSubmit={this.addSchool}>
                 <div className="form-group">
                     <label className="control-label" htmlFor="name">School Name:</label>
@@ -37,4 +45,11 @@ module.exports = React.createClass({
             </form>
         )
     }
-})
+}
+
+AddSchool.defaultProps = {
+  schools: PropTypes.object.isRequired,
+  actions: PropTypes.object.isRequired
+};
+
+export default AddSchool;

@@ -11,11 +11,12 @@ import React, {
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import Main from '../components/Main';
+import * as TodoActions from '../actions'
 /* Populated by react-webpack-redux:reducer */
 class App extends Component {
   render() {
-    const {actions} = this.props;
-    return <Main actions={actions}/>;
+    const {schools,actions} = this.props;
+    return <Main schools={schools} actions={actions}/>;
   }
 }
 /* Populated by react-webpack-redux:reducer
@@ -24,17 +25,18 @@ class App extends Component {
  *       adjust it here.
  */
 App.propTypes = {
+  schools: PropTypes.object.isRequired,
   actions: PropTypes.object.isRequired
-};
-function mapStateToProps(state) {
-  /* Populated by react-webpack-redux:reducer */
-  const props = {};
-  return props;
 }
+
+function mapStateToProps(state) {
+  return {
+    schools: state.schools
+  }
+}
+
 function mapDispatchToProps(dispatch) {
-  /* Populated by react-webpack-redux:action */
-  const actions = {};
-  const actionMap = { actions: bindActionCreators(actions, dispatch) };
+  const actionMap = { actions: bindActionCreators(TodoActions, dispatch) };
   return actionMap;
 }
 export default connect(mapStateToProps, mapDispatchToProps)(App);

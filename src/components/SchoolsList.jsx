@@ -1,18 +1,29 @@
-var React = require("react");
-var SchoolInfo = require("./SchoolInfo.jsx")
-var AddSchool = require("./AddSchool.jsx");
-module.exports = React.createClass({
-   render:function(){
+
+import React, {
+  Component,
+  PropTypes
+} from 'react';
+
+import AddSchool from './AddSchool.jsx';
+import SchoolInfo from './SchoolInfo.jsx';
+
+class SchoolList extends Component {
+  constructor(props, context) {
+    super(props, context)
+  }
+
+  render(){
+      const {schools,actions} = this.props;
        return(
            <div className="row">
                 <div className="col-md-6">
-                    <AddSchool />
+                    <AddSchool actions={actions} schools={schools} />
                 </div>
                 <div className="col-md-6">
                     {
-                        this.props.schools.map(function(s,index){
+                        schools.schools.map(function(s,index){
                             return(
-                                <SchoolInfo info={s} key={"school"+index} />
+                                <SchoolInfo {...actions} info={s} key={"school"+index} />
                             )
                         })
                     }
@@ -20,4 +31,12 @@ module.exports = React.createClass({
            </div>
        )
    }
-});
+}
+
+
+SchoolList.defaultProps = {
+  schools: PropTypes.object.isRequired,
+  actions: PropTypes.object.isRequired
+};
+
+export default SchoolList;
