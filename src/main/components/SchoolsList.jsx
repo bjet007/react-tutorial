@@ -7,7 +7,7 @@ import React, {
 import AddSchool from './AddSchool.jsx';
 import SchoolInfo from './SchoolInfo.jsx';
 
-class SchoolList extends Component {
+class SchoolsList extends Component {
   constructor(props, context) {
     super(props, context)
   }
@@ -34,9 +34,9 @@ class SchoolList extends Component {
 }
 
 
-SchoolList.defaultProps = {
+SchoolsList.defaultProps = {
   schools: PropTypes.object.isRequired,
   actions: PropTypes.object.isRequired
 };
 
-export default SchoolList;
+export default SchoolsList;

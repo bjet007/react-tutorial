@@ -1,16 +1,16 @@
-import * as ActionType from './const';
+import * as action from './const';
 
 export function addSchool(school){
         return {
            school:school,
-           type:ActionType.ADD_SCHOOL
+           type:action.ADD_SCHOOL
         };
     }
 
 export function deleteSchool(school){
         return {
            school:school,
-           type:ActionType.DELETE_SCHOOL
+           type:action.DELETE_SCHOOL
         };
     }
 

@@ -16,7 +16,7 @@ class AppComponent extends Component {
   render() {
     const {schools,actions} = this.props;
     return (
-      <SchoolsList className='index' schools={schools} actions={actions}/>
+      <SchoolsList schools={schools} actions={actions}/>
     );
   }
 }

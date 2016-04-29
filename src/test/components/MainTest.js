@@ -7,8 +7,13 @@
 // import React from 'react/addons';
 // const TestUtils = React.addons.TestUtils;
 import createComponent from 'helpers/shallowRenderHelper';
-
+import React, {
+  PropTypes
+} from 'react';
+import expect from 'expect'
 import Main from 'components/Main';
+import SchoolsList from 'components/SchoolsList';
+
 
 describe('MainComponent', () => {
   let MainComponent;
@@ -17,8 +22,7 @@ describe('MainComponent', () => {
     MainComponent = createComponent(Main);
   });
 
-  it('should have its component name as default className', () => {
-    console.log(MainComponent.props)
-    expect(MainComponent.props.actions).to.equal('index');
+  it('should render the SchoolsList', () => {
+    expect(MainComponent.type).toBeA(Function)
   });
 });
