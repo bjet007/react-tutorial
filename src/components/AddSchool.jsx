@@ -7,6 +7,9 @@ import React, {
 class AddSchool extends React.Component {
     constructor(props, context) {
       super(props, context)
+      this.addSchool = this.addSchool.bind(this)
+      this.handleInputChange = this.handleInputChange.bind(this)
+
       this.state = {
         name:"",
         tagline:""
@@ -15,7 +18,7 @@ class AddSchool extends React.Component {
 
     addSchool(e){
         e.preventDefault();
-        this.props.addSchool(this.state);
+        this.props.actions.addSchool(this.state);
     }
 
     handleInputChange(e){

@@ -31,7 +31,7 @@ App.propTypes = {
 
 function mapStateToProps(state) {
   return {
-    schools: state.schools
+    schools: state
   }
 }
 
