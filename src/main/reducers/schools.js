@@ -1,3 +1,5 @@
+import * as ActionType from '../actions/const';
+
 const initialState = [
   {name: 'Lovedale', tagline: 'A wonderful school'},
   {name: 'Bishop', tagline: 'An awesome school'},
@@ -6,7 +8,7 @@ const initialState = [
 
 export default function shools(state = initialState, action) {
   switch (action.type) {
-    case 'school:addSchool':
+    case ActionType.ADD_SCHOOL:
       return [
         {
           name: action.school.name,
@@ -16,7 +18,7 @@ export default function shools(state = initialState, action) {
       ]
 
 
-    case 'school:deleteSchool':
+    case  ActionType.DELETE_SCHOOL:
       return state.filter(school =>
         school.name !== action.school.name
       )

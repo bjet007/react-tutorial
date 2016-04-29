@@ -5,7 +5,7 @@ import React, {
 
 
 
-class SchoolInfo extends React.Component {
+class SchoolInfo extends Component {
   constructor(props, context) {
     super(props, context)
     this.delete = this.delete.bind(this);

@@ -1,5 +1,5 @@
 const redux = require('redux');
-const reducers = require('../reducers');
+const reducers = require('../reducers/index');
 const config = require('config');
 
 module.exports = function(initialState) {
@@ -8,7 +8,7 @@ module.exports = function(initialState) {
   if (module.hot) {
     // Enable Webpack hot module replacement for reducers
     module.hot.accept('../reducers', () => {
-      const nextReducer = require('../reducers')
+      const nextReducer = require('../reducers/index')
       store.replaceReducer(nextReducer)
     })
   }

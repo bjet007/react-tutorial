@@ -4,15 +4,15 @@ import React, {
   PropTypes
 } from 'react';
 
-class AddSchool extends React.Component {
+class AddSchool extends Component {
     constructor(props, context) {
       super(props, context)
       this.addSchool = this.addSchool.bind(this)
       this.handleInputChange = this.handleInputChange.bind(this)
 
       this.state = {
-        name:"",
-        tagline:""
+        name:'',
+        tagline:''
       }
     }
 

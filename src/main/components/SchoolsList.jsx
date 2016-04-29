@@ -23,7 +23,7 @@ class SchoolList extends Component {
                     {
                         schools.schools.map(function(s,index){
                             return(
-                                <SchoolInfo {...actions} info={s} key={"school"+index} />
+                                <SchoolInfo {...actions} info={s} key={'school'+index} />
                             )
                         })
                     }

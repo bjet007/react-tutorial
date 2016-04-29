@@ -1,6 +1,6 @@
 require('normalize.css/normalize.css');
 require('styles/App.css');
-require("bootstrap-webpack");
+require('bootstrap-webpack');
 import React, {
   Component,
   PropTypes
@@ -16,7 +16,7 @@ class AppComponent extends Component {
   render() {
     const {schools,actions} = this.props;
     return (
-      <SchoolsList className="index" schools={schools} actions={actions}/>
+      <SchoolsList className='index' schools={schools} actions={actions}/>
     );
   }
 }
