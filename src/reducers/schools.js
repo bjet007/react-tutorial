@@ -1,12 +1,12 @@
 const initialState = [
-  {name: "Lovedale", tagline: "A wonderful school"},
-  {name: "Bishop", tagline: "An awesome school"},
-  {name: "Daffodils", tagline: "An excellent school"}]
+  {name: 'Lovedale', tagline: 'A wonderful school'},
+  {name: 'Bishop', tagline: 'An awesome school'},
+  {name: 'Daffodils', tagline: 'An excellent school'}]
 
 
 export default function shools(state = initialState, action) {
   switch (action.type) {
-    case "school:addSchool":
+    case 'school:addSchool':
       return [
         {
           name: action.school.name,
@@ -16,7 +16,7 @@ export default function shools(state = initialState, action) {
       ]
 
 
-    case "school:deleteSchool":
+    case 'school:deleteSchool':
       return state.filter(school =>
         school.name !== action.school.name
       )

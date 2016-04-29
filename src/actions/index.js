@@ -3,14 +3,14 @@
 export function addSchool(school){
         return {
            school:school,
-           type:"school:addSchool"
+           type:'school:addSchool'
         };
     }
 
 export function deleteSchool(school){
         return {
            school:school,
-           type:"school:deleteSchool"
+           type:'school:deleteSchool'
         };
     }
 
