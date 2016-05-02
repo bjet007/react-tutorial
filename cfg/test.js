@@ -58,5 +58,10 @@ module.exports = {
       $: "jquery",
       jQuery: "jquery"
     })
-  ]
+  ],
+  externals: {
+    'cheerio': 'window',
+    'react/lib/ExecutionEnvironment': true,
+    'react/lib/ReactContext': true
+  }
 };

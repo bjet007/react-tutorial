@@ -3,19 +3,15 @@
 /*eslint no-console: 0*/
 'use strict';
 
-// Uncomment the following lines to use the react test utilities
-// import React from 'react/addons';
-// const TestUtils = React.addons.TestUtils;
-import createComponent from 'helpers/shallowRenderHelper';
-import React, {
-  PropTypes
-} from 'react';
+import shallowComponent from 'helpers/shallowRenderHelper';
+import React from 'react';
 import expect from 'expect'
 import Main from 'components/Main';
 import SchoolsList from 'components/SchoolsList';
 
 
-describe('AppComponent', () => {
+
+describe('MainComponent', () => {
   let MainComponent;
 
   beforeEach(() => {
@@ -23,18 +19,19 @@ describe('AppComponent', () => {
       schools: [],
       actions: {}
     })
-    MainComponent = createComponent(Main,props);
+    MainComponent = shallowComponent(Main,props);
   });
 
   it('should render the SchoolsList', () => {
-    expect(MainComponent.type).toBeA(Function)
+    expect(MainComponent.type()).toBeA(Function)
   });
 
   it('should render a list of schools', () => {
-    expect(MainComponent.props.schools).toBeA(Array)
+   expect(MainComponent.find('SchoolsList').props().schools).toBeA(Array);
   });
 
   it('should provide the list of actions', () => {
-    expect(MainComponent.props.actions).toBeA(Object)
+    expect(MainComponent.props().actions).toBeA(Object)
   });
 });
+

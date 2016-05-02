@@ -43,7 +43,7 @@ class AddSchool extends Component {
                     <input type="text" className="form-control" id="tagline" name="tagline" value={this.state.address} onChange={this.handleInputChange} placeholder="Tagline" />
                 </div>
                 <div className="form-group">
-                    <button className="btn" type="submit">Add School</button>
+                    <button className="btn" type="submit" >Add School</button>
                 </div>
             </form>
         )
