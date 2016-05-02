@@ -15,14 +15,26 @@ import Main from 'components/Main';
 import SchoolsList from 'components/SchoolsList';
 
 
-describe('MainComponent', () => {
+describe('AppComponent', () => {
   let MainComponent;
 
   beforeEach(() => {
-    MainComponent = createComponent(Main);
+    const props = Object.assign({
+      schools: [],
+      actions: {}
+    })
+    MainComponent = createComponent(Main,props);
   });
 
   it('should render the SchoolsList', () => {
     expect(MainComponent.type).toBeA(Function)
+  });
+
+  it('should render a list of schools', () => {
+    expect(MainComponent.props.schools).toBeA(Array)
+  });
+
+  it('should provide the list of actions', () => {
+    expect(MainComponent.props.actions).toBeA(Object)
   });
 });

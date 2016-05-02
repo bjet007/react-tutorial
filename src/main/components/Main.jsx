@@ -8,7 +8,7 @@ import React, {
 
 import SchoolsList from './SchoolsList.jsx';
 
-class AppComponent extends Component {
+class MainComponent extends Component {
   constructor(props, context) {
     super(props, context)
   }
@@ -21,9 +21,9 @@ class AppComponent extends Component {
   }
 }
 
-AppComponent.defaultProps = {
+MainComponent.defaultProps = {
   schools: PropTypes.object.isRequired,
   actions: PropTypes.object.isRequired
 };
 
-export default AppComponent;
+export default MainComponent;
